@@ -19,7 +19,7 @@ const readUsers = async (): Promise<Array<User>> => {
           id: expect.any(Number),
           name,
           email,
-          password: '1234',
+          password: 'Senh@123',
           admin: expect.any(Boolean),
         };
       })
