@@ -25,14 +25,14 @@ const manySchedules = async () => {
   const userAdmin = userRepo.create({
     name: 'admin',
     email: 'admin@mail.com',
-    password: '1234',
+    password: 'Senh@123',
     admin: true,
   });
 
   const userNotAdmin = userRepo.create({
     name: 'user',
     email: 'user@mail.com',
-    password: '1234',
+    password: 'Senh@123',
   });
 
   await userRepo.save([userAdmin, userNotAdmin]);
