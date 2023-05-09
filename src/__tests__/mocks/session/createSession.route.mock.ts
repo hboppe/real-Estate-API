@@ -2,13 +2,13 @@ export default {
   userActive: {
     name: 'Fabio',
     email: 'fabio@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
     admin: true,
   },
   userToInactive: {
     name: 'Cauan',
     email: 'cauan@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
   },
   userInvalidCredential1: {
     email: 'fabio@kenzie.com.br',
@@ -16,6 +16,6 @@ export default {
   },
   userInvalidCredential2: {
     email: 'invalid_credentials@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
   },
 };
