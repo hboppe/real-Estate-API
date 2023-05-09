@@ -22,8 +22,14 @@ const createUserReturnSchema = userSchema.omit({
   password: true
 })
 
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string()
+})
+
 export {
   createUserRequestSchema,
   userSchema,
-  createUserReturnSchema
+  createUserReturnSchema,
+  loginSchema
 }
