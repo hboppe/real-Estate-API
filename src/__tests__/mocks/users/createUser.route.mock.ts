@@ -2,18 +2,18 @@ export default {
   userComplete: {
     name: 'Fabio',
     email: 'fabio@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
     admin: true,
   },
   userWithoutAdmin: {
     name: 'Cauan',
     email: 'cauan@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
   },
   userUnique: {
     name: 'Maykel',
     email: 'maykel@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
   },
   userInvalidBody: {
     name: 1234,
