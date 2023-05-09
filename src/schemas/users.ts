@@ -13,9 +13,9 @@ const userSchema = z.object({
   email: z.string().email().max(45),
   password: z.string(),
   admin: z.boolean(),
-  createdAt: z.date(),
-  updatedAt: z.date().nullable(),
-  deletedAt: z.date().nullable()
+  createdAt: z.date().or(z.string()),
+  updatedAt: z.date().nullable().or(z.string()),
+  deletedAt: z.date().nullable().or(z.string())
 })
 
 const createUserReturnSchema = userSchema.omit({
@@ -27,9 +27,14 @@ const loginSchema = z.object({
   password: z.string()
 })
 
+const allUsersSchema = userSchema.omit({
+  password: true
+}).array()
+
 export {
   createUserRequestSchema,
   userSchema,
   createUserReturnSchema,
-  loginSchema
+  loginSchema,
+  allUsersSchema
 }

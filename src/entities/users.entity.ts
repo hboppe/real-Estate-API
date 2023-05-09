@@ -19,14 +19,14 @@ class User {
   @Column({ type: 'varchar', length: 120 })
   password: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: "date" })
   createdAt: Date
 
-  @UpdateDateColumn()
-  updatedAt: Date | null
+  @UpdateDateColumn({ type: "date" })
+  updatedAt: null | Date
 
   @DeleteDateColumn({ nullable: true })
-  deletedAt: Date | null
+  deletedAt: null | Date
 
   @OneToMany(() => Schedule, (schedule) => schedule.user)
   schedules: Schedule[]

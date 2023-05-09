@@ -12,4 +12,11 @@ usersRoute.post(
   usersControllers.createUser
 )
 
+usersRoute.get(
+  '',
+  usersMiddlewares.ensureTokenIsValid,
+  usersMiddlewares.ensureUserIsAdmin,
+  usersControllers.getAllUsers
+)
+
 export default usersRoute
