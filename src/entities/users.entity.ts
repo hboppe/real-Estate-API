@@ -10,8 +10,11 @@ class User {
   @Column({ type: "varchar", length: 45 })
   name: string
 
-  @Column({ type: 'boolean', default: 'false' })
-  admin: boolean
+  @Column({ type: 'varchar', length: 45 })
+  email: string
+
+  @Column({ type: 'boolean', default: false, nullable: true })
+  admin: boolean 
 
   @Column({ type: 'varchar', length: 120 })
   password: string
@@ -20,7 +23,7 @@ class User {
   createdAt: Date
 
   @UpdateDateColumn()
-  updatedAt: Date
+  updatedAt: Date | null
 
   @DeleteDateColumn({ nullable: true })
   deletedAt: Date | null

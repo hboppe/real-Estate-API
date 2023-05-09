@@ -11,8 +11,10 @@ const ensureEmailIsUnique = async (req: Request, res: Response, next: NextFuncti
     .createQueryBuilder('user')
     .where('user.email = :email', { email: userEmail})
     .getOne()
+
+  // console.log(`ENSUREEMAILISUNIQUE`,foundEmail)
   
-  if(!foundEmail) throw new AppError('Email already exists', 409)
+  if(foundEmail) throw new AppError('Email already exists', 409)
 
   return next()
 }
