@@ -2,31 +2,31 @@ export default {
   userAdminTemplate: {
     name: 'Fabio',
     email: 'fabio@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
     admin: true,
   },
   userNotAdminTemplate: {
     name: 'Cauan',
     email: 'cauan@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
     admin: false,
   },
   userComplete: {
     name: 'Cauan',
     email: 'cauan.f@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
   },
   userPartial: {
-    password: '1234',
+    password: 'Senh@123',
   },
   userAdmin: {
-    password: '1234',
+    password: 'Senh@123',
     admin: true,
   },
   userUnique: {
     name: 'Maykel',
     email: 'maykel@kenzie.com.br',
-    password: '1234',
+    password: 'Senh@123',
   },
   userInvalidBody: {
     name: 1234,
