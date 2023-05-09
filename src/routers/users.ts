@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { usersControllers } from "../controllers";
 import { usersMiddlewares } from '../middlewares/users/index';
-import { createUserRequestSchema } from "../schemas/users";
+import { createUserRequestSchema, updateUserRequestSchema } from "../schemas/users";
 
 const usersRoute: Router = Router();
 
@@ -17,6 +17,15 @@ usersRoute.get(
   usersMiddlewares.ensureTokenIsValid,
   usersMiddlewares.ensureUserIsAdmin,
   usersControllers.getAllUsers
+)
+
+usersRoute.patch(
+  '/:id',
+  usersMiddlewares.ensureDataisValid(updateUserRequestSchema),
+  usersMiddlewares.ensureIdIsValid,
+  usersMiddlewares.ensureTokenIsValid,
+  usersMiddlewares.checkIfUserIsAdminOrSelf,
+  usersControllers.updateUser
 )
 
 export default usersRoute

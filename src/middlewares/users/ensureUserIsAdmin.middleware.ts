@@ -4,7 +4,6 @@ import { AppError } from '../../error';
 const ensureUserIsAdmin = (req: Request, res: Response, next: NextFunction) => {
 
   const { admin } = res.locals.decoded;
-  // console.log(`ISADMIN?`, admin)
 
   if(!admin) throw new AppError('Insufficient permission', 403)
   

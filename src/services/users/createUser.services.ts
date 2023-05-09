@@ -3,7 +3,7 @@ import { AppDataSource } from "../../data-source"
 import { TCreateUserRequest, TCreateUserReturn, TUser } from "../../interfaces/users"
 import User from '../../entities/users.entity';
 
-const createUser = async (userData: TCreateUserRequest) => {
+const createUser = async (userData: TCreateUserRequest): Promise<TCreateUserReturn> => {
 
   const userRepo: Repository<User> = AppDataSource.getRepository(User);
   const user: TUser =  userRepo.create(userData)

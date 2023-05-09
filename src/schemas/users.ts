@@ -1,4 +1,4 @@
-import { boolean, z } from 'zod'
+import { z } from 'zod'
 
 const createUserRequestSchema = z.object({
   name: z.string().max(45),
@@ -31,10 +31,27 @@ const allUsersSchema = userSchema.omit({
   password: true
 }).array()
 
+const updateUserRequestSchema = createUserRequestSchema.omit({
+  admin: true
+}).partial()
+
+const updateUserReturnSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  email: z.string()
+})
+
+const userReturnSchema = userSchema.omit({
+  password: true
+})
+
 export {
   createUserRequestSchema,
   userSchema,
   createUserReturnSchema,
   loginSchema,
-  allUsersSchema
+  allUsersSchema,
+  updateUserRequestSchema,
+  userReturnSchema,
+  updateUserReturnSchema
 }
