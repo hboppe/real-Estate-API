@@ -1,0 +1,18 @@
+import { Router } from "express";
+import { usersMiddlewares } from '../middlewares/users/index';
+import { createCategoryRequestSchema } from "../schemas/categories";
+import { categoriesMiddlewares } from '../middlewares/categories/index';
+import { categoriesControllers } from '../controllers/categories/index';
+
+const categoryRoute: Router = Router()
+
+categoryRoute.post(
+  '',
+  usersMiddlewares.ensureDataisValid(createCategoryRequestSchema),
+  usersMiddlewares.ensureTokenIsValid,
+  usersMiddlewares.ensureUserIsAdmin,
+  categoriesMiddlewares.ensureCategoryNameIsUnique,
+  categoriesControllers.createCategory
+)
+
+export default categoryRoute
