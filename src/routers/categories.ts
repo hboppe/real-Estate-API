@@ -15,4 +15,9 @@ categoryRoute.post(
   categoriesControllers.createCategory
 )
 
+categoryRoute.get(
+  '',
+  categoriesControllers.getAllCategories
+)
+
 export default categoryRoute

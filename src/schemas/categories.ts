@@ -9,7 +9,10 @@ const createCategoryRequestSchema = categorySchema.omit({
   id: true
 })
 
+const allCategoriesSchema = categorySchema.array()
+
 export {
   categorySchema,
-  createCategoryRequestSchema
+  createCategoryRequestSchema,
+  allCategoriesSchema
 }
