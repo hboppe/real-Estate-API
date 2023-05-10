@@ -28,4 +28,12 @@ usersRoute.patch(
   usersControllers.updateUser
 )
 
+usersRoute.delete(
+  '/:id',
+  usersMiddlewares.ensureIdIsValid,
+  usersMiddlewares.ensureTokenIsValid,
+  usersMiddlewares.checkIfUserIsAdminOrSelf,
+  usersControllers.deleteUser
+)
+
 export default usersRoute
