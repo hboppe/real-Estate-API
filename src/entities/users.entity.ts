@@ -1,4 +1,4 @@
-import { BeforeInsert, Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import Schedule from "./schedules.entity";
 import { hashSync } from 'bcryptjs'
 
@@ -32,9 +32,30 @@ class User {
   schedules: Schedule[]
 
   @BeforeInsert()
+  @BeforeUpdate()
   hashPassword() {
     this.password = hashSync(this.password, 12)
   }
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  capitalizeName() {
+    const splitedName = this.name.split(' ')
+    const capitalizedNameArray = splitedName.map(name => {
+      const capitalizedName = name[0].toUpperCase() + name.substring(1, name.length)
+
+      return capitalizedName
+    })
+
+    this.name = capitalizedNameArray.join(' ')
+  }
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  emailToLowerCase() {
+    this.email = this.email.toLowerCase()
+  }
+
 }
 
 export default User
