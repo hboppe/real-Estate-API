@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import { usersServices } from '../../services/users/index';
 
-const getAllUsers = async (req: Request, res: Response, next: NextFunction): Promise<Response> => {
+const getAllUsers = async (req: Request, res: Response): Promise<Response> => {
 
   const allUsers = await usersServices.getAllUsers()
 

@@ -1,8 +1,8 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import { TUpdateUserReturn, TUpdateUserRequest } from '../../interfaces/users';
 import { usersServices } from '../../services/users/index';
 
-const updateUser = async (req: Request, res: Response, next: NextFunction): Promise<Response> => {
+const updateUser = async (req: Request, res: Response): Promise<Response> => {
 
   const userId = Number(req.params.id)
   const userData: TUpdateUserRequest = req.body
