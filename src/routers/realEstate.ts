@@ -15,4 +15,9 @@ realEstateRoute.post(
   realEstateControllers.createRealEstate
 )
 
+realEstateRoute.get(
+  '',
+  realEstateControllers.getAllRealEstates
+)
+
 export default realEstateRoute

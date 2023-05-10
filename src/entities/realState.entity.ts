@@ -17,17 +17,18 @@ class RealEstate {
   @Column({ type: 'integer' })
   size: number
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'date' })
   createdAt: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ type: 'date' })
   updatedAt: Date
 
   @OneToOne(() => Address, (address) => address.realEstate)
   @JoinColumn()
   address: Address
 
-  @ManyToOne(() => Category)
+  @ManyToOne(() => Category, (category) => category.realEstate)
+  @JoinColumn()
   category: Category
 
   @OneToMany(() => Schedule, (schedule) => schedule.realEstate)

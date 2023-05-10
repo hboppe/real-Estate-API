@@ -8,6 +8,9 @@ class Category {
 
   @Column({ type: 'varchar', length: 45, unique: true })
   name: string
+
+  @OneToMany(() => RealEstate, (realEstate) => realEstate.category)
+  realEstate: RealEstate[]
 }
 
 export default Category

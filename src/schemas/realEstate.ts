@@ -26,7 +26,13 @@ const createRealEstateRequestSchema = realEstateSchema.omit({
   categoryId: z.number().int()
 })
 
+const allRealEstatesSchema = realEstateSchema.omit({
+  category: true
+}).array()
+
 export {
   realEstateSchema,
-  createRealEstateRequestSchema
+  createRealEstateRequestSchema,
+  allRealEstatesSchema
+
 }
