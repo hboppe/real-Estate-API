@@ -20,4 +20,9 @@ categoryRoute.get(
   categoriesControllers.getAllCategories
 )
 
+categoryRoute.get(
+  '/:id/realEstate',
+  categoriesControllers.getRealEstateByCategory
+)
+
 export default categoryRoute
