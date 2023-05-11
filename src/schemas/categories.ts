@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { allRealEstatesSchema, realEstateSchema } from './realEstate'
+import { realEstateSchema } from './realEstate'
 
 const categorySchema = z.object({
   id: z.number(),

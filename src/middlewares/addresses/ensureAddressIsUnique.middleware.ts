@@ -9,6 +9,7 @@ const ensureAddressIsUnique = async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
+  
   const { address } = req.body;
   const foundAddress: TAddress | null = await AppDataSource.getRepository(
     Address

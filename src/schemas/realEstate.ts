@@ -34,5 +34,4 @@ export {
   realEstateSchema,
   createRealEstateRequestSchema,
   allRealEstatesSchema
-
 }

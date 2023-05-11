@@ -9,8 +9,6 @@ const addressSchema = z.object({
   state: z.string().max(2)
 })
 
-
-
 const createAddressRequesSchema = addressSchema.omit({
   id: true
 })

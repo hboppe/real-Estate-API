@@ -9,6 +9,7 @@ const ensureCategoryNameIsUnique = async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
+  
   const categoryName: string = req.body.name;
 
   const foundCategory: TCategory | null = await AppDataSource.getRepository(
