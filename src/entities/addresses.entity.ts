@@ -1,4 +1,4 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import RealEstate from "./realState.entity";
 
 @Entity('addresses')
@@ -23,6 +23,25 @@ class Address {
 
   @OneToOne(() => RealEstate, (realEstate) => realEstate.address)
   realEstate: RealEstate
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  stateToUpperCase() {
+    this.state = this.state.toUpperCase()
+  }
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  capitalizeName() {
+    const splitedName = this.city.split(' ')
+    const capitalizedNameArray = splitedName.map(name => {
+      const capitalizedName = name[0].toUpperCase() + name.substring(1, name.length)
+
+      return capitalizedName
+    })
+
+    this.city = capitalizedNameArray.join(' ')
+  }
 }
 
 export default Address

@@ -55,13 +55,13 @@ const manySchedules = async () => {
   const schedule1 = await scheduleRepo.save({
     realEstate,
     user: userAdmin,
-    date: '2022-03-01',
+    date: '2023-03-01',
     hour: '12:30:00',
   });
   const schedule2 = await scheduleRepo.save({
     realEstate,
     user: userNotAdmin,
-    date: '2022-03-01',
+    date: '2023-03-01',
     hour: '13:30:00',
   });
 

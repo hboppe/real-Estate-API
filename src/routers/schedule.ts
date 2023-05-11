@@ -11,6 +11,7 @@ scheduleRoute.post(
   '',
   usersMiddlewares.ensureTokenIsValid,
   usersMiddlewares.ensureDataisValid(createScheduleRequestSchema),
+  schedulesMiddlewares.ensureDateIsInTheFuture,
   realEstatesMiddlewares.ensureRealEstateIdIsValid,
   schedulesMiddlewares.ensureRealEstateIsNotBooked,
   schedulesMiddlewares.ensureUserDoesntHaveASchedule,
