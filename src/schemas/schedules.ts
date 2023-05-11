@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { realEstateSchema } from './realEstate'
 
 const datePattern = /^\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/
 const timePattern = /^([0-1][0-9]|2[0-3]):([0-5][0-9])$/
@@ -22,6 +23,14 @@ const createScheduleRequestSchema = scheduleSchema.omit({
 const scheduleCreateInfoSchema = createScheduleRequestSchema.omit({
   realEstateId: true
 })
+
+// const scheduleWithUser = scheduleSchema.extend({
+//   user: 
+// })
+
+// const allSchedulesOfARealEstate = realEstateSchema.extend({
+//   schedules: 
+// })
 
 export {
   createScheduleRequestSchema,

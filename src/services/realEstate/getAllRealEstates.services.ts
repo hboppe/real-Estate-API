@@ -10,7 +10,7 @@ const getAllRealEstates = async (): Promise<TAllRealEstates> => {
     .createQueryBuilder('realEstate')
     .leftJoinAndSelect('realEstate.address', 'address')
     .getMany()
-    
+  
   const validatedAllRealEstate: TAllRealEstates = allRealEstatesSchema.parse(allRealEstates);
 
   return validatedAllRealEstate

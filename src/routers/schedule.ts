@@ -18,4 +18,12 @@ scheduleRoute.post(
   schedulesControllers.createSchedule
 )
 
+scheduleRoute.get(
+  '/realEstate/:id',
+  usersMiddlewares.ensureTokenIsValid,
+  usersMiddlewares.ensureUserIsAdmin,
+  realEstatesMiddlewares.ensureRealEstateIdIsValid,
+  schedulesControllers.getAllSchedulesByRealEstateId
+)
+
 export default scheduleRoute

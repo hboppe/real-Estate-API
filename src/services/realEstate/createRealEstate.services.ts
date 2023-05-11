@@ -16,6 +16,7 @@ const createRealEstate = async (
   realEstateInfo: TCreateRealEstateRequest
 ): Promise<any> => {
 
+
   const addressRepo: Repository<Address> = AppDataSource.getRepository(Address);
   const newAddress: Address = addressRepo.create(address);
   await addressRepo.save(newAddress);
@@ -45,9 +46,14 @@ const createRealEstate = async (
     .getOne();
 
 
-  const validatedRealEstate = realEstateSchema.parse(realEstateWithAddress);
-    
+  // console.log(realEstateSchema)
+  // if (!realEstateWithAddress) {
+  //   throw new Error(`No real estate record found with id ${newRealEstate.id}`);
+  // }
+  
+  // const validatedRealEstate = realEstateSchema.parse({realEstateWithAddress});
 
-  return validatedRealEstate;
+
+  return realEstateWithAddress;
 };
 export default createRealEstate;
