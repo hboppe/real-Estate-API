@@ -1,9 +1,9 @@
 import { Repository } from "typeorm"
 import { AppDataSource } from "../../data-source"
 import { RealEstate, Schedule, User } from "../../entities"
-import { TCreateScheduleRequestSchema } from "../../interfaces/schedules.interfaces"
+import { TScheduleInfo } from "../../interfaces/schedules.interfaces"
 
-const createSchedule = async (realEstateId: number, userId: number, scheduleInfos: TCreateScheduleRequestSchema): Promise<void> => {
+const createSchedule = async (realEstateId: number, userId: number, scheduleInfos: TScheduleInfo): Promise<void> => {
 
   const user: User | null = await AppDataSource
     .getRepository(User)
@@ -23,7 +23,6 @@ const createSchedule = async (realEstateId: number, userId: number, scheduleInfo
   const newSchedule = scheduleRepo.create(scheduleInfos)
   newSchedule.user = user!
   newSchedule.realEstate = realEstate!
-  console.log(newSchedule)
 
   await scheduleRepo.save(newSchedule)
 }

@@ -15,9 +15,16 @@ const scheduleSchema = z.object({
 
 const createScheduleRequestSchema = scheduleSchema.omit({
   id: true
+}).extend({
+  realEstateId: z.number().int().gt(0)
+})
+
+const scheduleCreateInfoSchema = createScheduleRequestSchema.omit({
+  realEstateId: true
 })
 
 export {
   createScheduleRequestSchema,
-  scheduleSchema
+  scheduleSchema,
+  scheduleCreateInfoSchema
 }

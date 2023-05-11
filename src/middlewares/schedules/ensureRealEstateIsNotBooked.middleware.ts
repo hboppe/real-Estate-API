@@ -5,7 +5,6 @@ import { Schedule } from '../../entities';
 import { AppError } from '../../error';
 
 const ensureRealEstateIsNotBooked = async (req: Request, res: Response, next: NextFunction) => {
-
   const { realEstateId, date, hour } = req.body;
 
   const schedules = await AppDataSource
