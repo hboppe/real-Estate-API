@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import RealEstate from './realState.entity';
 import User from './users.entity';
 
@@ -14,9 +14,11 @@ class Schedule {
   hour: string
 
   @ManyToOne(() => RealEstate, (realEstate) => realEstate.schedules)
+  @JoinColumn()
   realEstate: RealEstate
 
   @ManyToOne(() => User, (user) => user.schedules)
+  @JoinColumn()
   user: User
 }
 

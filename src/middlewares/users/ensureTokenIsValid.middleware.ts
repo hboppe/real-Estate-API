@@ -4,7 +4,6 @@ import { AppError } from '../../error';
 import 'dotenv/config'
 
 const ensureTokenIsValid = (req: Request, res: Response, next: NextFunction) => {
-
   const { authorization } = req.headers
 
   if(!authorization) throw new AppError('Missing bearer token', 401)
@@ -19,7 +18,6 @@ const ensureTokenIsValid = (req: Request, res: Response, next: NextFunction) => 
       decoded
     }
   })
-
   return next();
 };
 
