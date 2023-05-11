@@ -9,7 +9,7 @@ export default {
       street: 'street',
       zipCode: 'zipCode',
       number: 'number',
-      city: 'city',
+      city: 'City',
       state: 'SP',
     },
     categoryToCreate: {
@@ -26,7 +26,7 @@ export default {
       street: 'street1',
       zipCode: 'zipCode1',
       number: null,
-      city: 'city1',
+      city: 'City1',
       state: 'SP',
     },
     categoryToCreate: {
@@ -42,7 +42,7 @@ export default {
       street: 'street2',
       zipCode: 'zipCode2',
       number: 'number2',
-      city: 'city2',
+      city: 'City2',
       state: 'ST',
     },
     categoryToCreate: {

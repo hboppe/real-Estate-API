@@ -45,15 +45,6 @@ const createRealEstate = async (
     .where("realEstate.id = :id", { id: newRealEstate.id })
     .getOne();
 
-
-  // console.log(realEstateSchema)
-  // if (!realEstateWithAddress) {
-  //   throw new Error(`No real estate record found with id ${newRealEstate.id}`);
-  // }
-  
-  // const validatedRealEstate = realEstateSchema.parse({realEstateWithAddress});
-
-
   return realEstateWithAddress;
 };
 export default createRealEstate;

@@ -25,7 +25,7 @@ export default {
     hour: '19:00',
   },
   schedulesInvalidDate: {
-    date: '2024/01/01',
+    date: '2024/01/06',
     hour: '12:30',
   },
   schedulesInvalidBody: {
