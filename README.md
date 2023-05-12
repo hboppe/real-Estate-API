@@ -48,20 +48,20 @@ A sua empresa está te confiando esse desafio, portanto, dê o seu melhor no des
 
 ## Endpoints:
 
-| Método | Endpoint                   | Responsabilidade                                  | Autenticação                           |
+| Method | Endpoint                   | Responsabilidade                                  | Autenticação                           |
 | ------ | -------------------------- | ------------------------------------------------- | -------------------------------------- |
-| POST   | /users                     | Criação de usuário                                | Qualquer usuário, não necessita token  |
-| GET    | /users                     | Lista todos os usuários                           | Apenas Admnistradores                  |
-| PATCH  | /users/:id                 | Atualiza um usuário                               | Apenas Admnistradores ou dono da conta |
-| DELETE | /users/:id                 | Realiza um soft delete no usuário                 | Apenas Admnistradores                  |
-| POST   | /login                     | Gera o token de autenticação                      | Qualquer usuário, não necessita token  |
-| POST   | /categories                | Criação de categoria                              | Apenas Admnistradores                  |
-| GET    | /categories                | Lista todas as categorias                         | Qualquer usuário, não necessita token  |
-| GET    | /categories/:id/realEstate | Lista todos imóveis que pertencem a uma categoria | Qualquer usuário, não necessita token  |
-| POST   | /realEstate                | Criação de um imóvel                              | Apenas Admnistradores                  |
-| GET    | /realEstate                | Lista todos os imóveis                            | Qualquer usuário, não necessita token  |
-| POST   | /schedules                 | Agenda uma visita a um imóvel                     | Qualquer usuário, obrigatório token    |
-| GET    | /schedules/realEstate/:id  | lista todos os agendamentos de um imóvel          | Apenas Admnistradores                  |
+| POST   | /users                     | User creation                                     | Any user, token not required         |
+| GET    | /users                     | List all users                                    | Administrators only                  |
+| PATCH  | /users/:id                 | Update a user                                     | Administrators only |
+| DELETE | /users/:id                 | Perform a soft delete on the user                 | Apenas Admnistradores                  |
+| POST   | /login                     | Generate authentication token                     | Any user, token not required  |
+| POST   | /categories                | Category creation                                 | Administrators only                  |
+| GET    | /categories                | List all categories                               | Any user, token not required  |
+| GET    | /categories/:id/realEstate | List all properties that belong to a category     | Any user, token not required  |
+| POST   | /realEstate                | Property creation                                 | Administrators only                  |
+| GET    | /realEstate                | List all properties                               | 	Any user, token not required  |
+| POST   | /schedules                 | Schedule a visit to a property                    | Any user, token mandatory    |
+| GET    | /schedules/realEstate/:id  | List all schedules for a specific property        | Administrators only                  |
 
 ## Requisitos do Serviço
 
