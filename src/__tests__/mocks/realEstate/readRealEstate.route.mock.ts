@@ -16,7 +16,7 @@ const manyRealStations = async (
     return {
       city: `city${index}`,
       street: `street${index}`,
-      state: `s${index}`,
+      state: `sp`,
       zipCode: `zipCode${index}`,
       number: index.toString(),
     };

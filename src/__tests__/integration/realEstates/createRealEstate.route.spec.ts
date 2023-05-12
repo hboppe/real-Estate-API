@@ -122,6 +122,7 @@ describe('POST /realEstate', () => {
             'String must contain at most 8 character(s)',
             'Expected string, received object',
             'String must contain at most 2 character(s)',
+            'State must contain exactly two letters',
           ],
           size: ['Number must be greater than 0'],
         },
