@@ -10,7 +10,8 @@ const settings = (): DataSourceOptions => {
   if (nodeEnv === "test") {
     return {
       type: "sqlite",
-      database: ":memory:",
+      database: ":memory:"
+      ,
       synchronize: true,
       entities: [entitiesPath],
     };
@@ -22,6 +23,9 @@ const settings = (): DataSourceOptions => {
 
   return {
     type: "postgres",
+    ssl: process.env.NODE_ENV === "production" ?
+            { rejectUnauthorized: false}
+            : false,
     url: dbUrl,
     synchronize: false,
     logging: true,

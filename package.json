@@ -4,7 +4,8 @@
   "main": "index.ts",
   "author": "Felipe <felipe.silva@kenzie.com.br>",
   "license": "MIT",
-  "scripts": {
+  "scripts":
+   {
     "start": "node dist/server.js",
     "build": "tsc",
     "dev": "ts-node-dev --rs --cls --ignore-watch node_modules src/server.ts",
